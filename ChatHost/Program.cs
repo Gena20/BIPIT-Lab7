@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wcfServiceHost
+namespace ChatHost
 {
     class Program
     {
@@ -15,7 +15,7 @@ namespace wcfServiceHost
             {
                 host.Open();
                 Console.WriteLine("Host started");
-                Console.ReadKey();
+                Console.ReadLine();
             }
         }
     }

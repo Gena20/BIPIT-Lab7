@@ -11,6 +11,7 @@ namespace wcfService
     public class ServiceChat : IServiceChat
     {
         List<ServerUser> users = new List<ServerUser>();
+        List<string> history = new List<string>();
         int nextId = 1;
 
         public int Connect(string name)
@@ -21,8 +22,8 @@ namespace wcfService
                 Name = name,
                 OperationContext = OperationContext.Current
             };
-            users.Add(user);
             SendMsg($"{user.Name} connected,", 0);
+            users.Add(user);
 
             return user.ID;
         }
@@ -44,10 +45,16 @@ namespace wcfService
             foreach (var user in users)
             {
                 var nowDate = DateTime.Now.ToShortTimeString();
-                var msg = $"{nowDate}: {fromUser?.Name} {msgText}";
+                var msg = $"{nowDate}: {fromUser?.Name}: {msgText}";
+                history.Add(msg);
 
                 user.OperationContext.GetCallbackChannel<IServerChatCallback>().MsgCallback(msg);
             }
+        }
+
+        public List<string> LoadHistory()
+        {
+            return history;
         }
     }
 }

@@ -19,6 +19,9 @@ namespace wcfService
 
         [OperationContract(IsOneWay = true)]
         void SendMsg(string msgText, int formId);
+
+        [OperationContract]
+        List<string> LoadHistory();
     }
 
     public interface IServerChatCallback

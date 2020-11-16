@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFB4B26E-826F-40AC-8F67-BD92CC84419C}</ProjectGuid>
+    <ProjectGuid>{C68FA278-D73A-446D-8BB9-A6BFDC30080D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>wcfServiceHost</RootNamespace>
-    <AssemblyName>wcfServiceHost</AssemblyName>
+    <RootNamespace>ChatHost</RootNamespace>
+    <AssemblyName>ChatHost</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
